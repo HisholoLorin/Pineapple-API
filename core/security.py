@@ -63,7 +63,7 @@ def getCurrentUser(accessToken: str = Depends(oauth2Scheme), db=None):
         return None
     if not db:
         db = getDb()
-    user = db.users.find_one({"_id": ObjectId(userId)}, {"_id": 1, "username": 1, "email": 1})
+    user = db.users.find_one({"_id": ObjectId(userId)}, {"_id": 1, "username": 1, "email": 1, "image" : 1})
     user = UserSerializer(user)
     if not user:
         return {"message": f"something went wrong with userid {userId}"}

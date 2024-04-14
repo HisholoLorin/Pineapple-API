@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 class Settings(BaseSettings):
     # MongoDB
     MONGODB_URL: str = os.environ.get("MONGODB_URL")
